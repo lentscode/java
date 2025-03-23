@@ -9,8 +9,8 @@ public class Principale {
 
 		System.out.println(miaLista.size());
 
-		for (int i = 0; i < miaLista.size(); i++) {
-			System.out.println(miaLista.get(i));
+		for (Persona persona : miaLista) {
+			System.out.println(persona);
 		}
 
 		miaLista.clear();

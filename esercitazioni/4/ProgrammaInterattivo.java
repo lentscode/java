@@ -1,8 +1,10 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class ProgrammaInterattivo {
-	static final String[] paroleVietate = {
+	static final ArrayList<String> paroleVietate = new ArrayList<String>(
+		Arrays.asList(
 		"alfa",
 		"beta",
 		"gamma",
@@ -11,8 +13,8 @@ public class ProgrammaInterattivo {
 		"kappa",
 		"lambda",
 		"sigma",
-		"omega"
-	};
+		"omega")
+		);
 
 	public static void main(String[] args) {
 		final Scanner scanner = new Scanner(System.in);
@@ -21,7 +23,7 @@ public class ProgrammaInterattivo {
 		System.out.println("Digita qualcosa e batti enter oppure scrivi \"fine\" per terminare il programma");
 
 		while(!(stringa = scanner.next()).equals("fine")) {
-			if (Arrays.asList(paroleVietate).contains(stringa.toLowerCase())) {	
+			if (paroleVietate.contains(stringa.toLowerCase())) {	
 				System.out.println("Parola vietata");
 				continue;
 			}

@@ -1,3 +1,5 @@
+package es6;
+
 public class Rectangle extends Shape {
 	private double width;
 	private double heigth;

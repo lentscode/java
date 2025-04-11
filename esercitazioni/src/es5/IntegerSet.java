@@ -1,3 +1,7 @@
+package es5;
+
+import java.util.ArrayList;
+
 class IntegerSetTest {
 	public static void main(String[] args) {
 		final IntegerSet i1 = new IntegerSet();
@@ -23,31 +27,35 @@ class IntegerSetTest {
 }
 
 class IntegerSet {
-	private boolean[] list;
+	private ArrayList<Integer> list;
 
 	public IntegerSet() {
-		list = new boolean[100];
+		list = new ArrayList<Integer>();
 	}
 
-	private IntegerSet(boolean[] list) {
+	private IntegerSet(ArrayList<Integer> list) {
 		this.list = list;
 	}
 
 	public IntegerSet unionOfIntegerSet(IntegerSet b) {
-		boolean[] list = new boolean[100];
+		ArrayList<Integer> list = new ArrayList<Integer>(this.list);
 
-		for (int i = 0; i < list.length; i++) {
-			list[i] = this.list[i] || b.list[i];
+		for (int i = 0; i < b.list.size(); i++) {
+			if (list.contains(b.list.get(i))) continue;
+
+			list.add(b.list.get(i));
 		}
 
 		return new IntegerSet(list);
 	}
 
 	public IntegerSet intersectionOfIntegerSet(IntegerSet b) {
-		boolean[] list = new boolean[100];
+		ArrayList<Integer> list = new ArrayList<Integer>();
 
-		for (int i = 0; i < list.length; i++) {
-			list[i] = this.list[i] && b.list[i];
+		for (int i = 0; i < this.list.size(); i++) {
+			if (!b.list.contains(this.list.get(i))) continue;
+
+			list.add(this.list.get(i));
 		}
 
 		return new IntegerSet(list);
@@ -59,7 +67,12 @@ class IntegerSet {
 			return;
 		}
 
-		list[n] = true;
+		if (list.contains(n)) {
+			System.out.println("Number already present");
+			return;
+		}
+
+		list.add(n);
 	}
 
 	public void deleteElement(int n) {
@@ -68,16 +81,21 @@ class IntegerSet {
 			return;
 		}
 
-		list[n] = false;
+		if (!list.contains(n)) {
+			System.out.println("Number not present");
+			return;
+		}
+
+		Integer element = n;
+		
+		list.remove(element);
 	}
 
 	public String toString() {
 		String res = "[";
 
-		for (int i = 0; i < list.length; i++) {
-			if (!list[i]) continue;
-
-			res += String.format("%d ", i);
+		for (int i = 0; i < list.size(); i++) {
+			res += String.format("%d ", list.get(i));
 		}
 
 		res += "]";

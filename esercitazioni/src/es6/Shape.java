@@ -1,3 +1,5 @@
+package es6;
+
 public abstract class Shape implements Drawable, Scalable {
 	private String color;
 	private boolean filled;

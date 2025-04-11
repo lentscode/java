@@ -1,3 +1,5 @@
+package es6;
+
 public class Circle extends Shape {
 	private double radius;
 

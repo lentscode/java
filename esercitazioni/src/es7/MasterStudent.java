@@ -1,7 +1,7 @@
 package es7;
 
 public class MasterStudent extends Student {
-  private String bachelorDegree;
+  private final String bachelorDegree;
 
   public MasterStudent(
     String firstName,
@@ -16,5 +16,9 @@ public class MasterStudent extends Student {
     super(firstName, lastName, age, registrationDate, number, course, contribute, 180);
 
     this.bachelorDegree = bachelorDegree;
+  }
+
+  public String getBachelorDegree() {
+    return bachelorDegree;
   }
 }

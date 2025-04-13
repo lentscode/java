@@ -2,7 +2,7 @@ package es7;
 
 public class Product {
 	private final String name;
-	private double price;
+	private final double price;
 
 	public Product(String name, double price) {
 		this.name = name;

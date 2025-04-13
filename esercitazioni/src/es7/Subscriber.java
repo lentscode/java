@@ -1,11 +1,11 @@
 package es7;
 
-import java.util.ArrayList;
 import es5.Person;
+import java.util.ArrayList;
 
 public class Subscriber extends Person {
 	private double discount;
-	private ArrayList<Product> productsBought;
+	private final ArrayList<Product> productsBought;
 
 	public Subscriber(
 		String firstName,
@@ -16,7 +16,7 @@ public class Subscriber extends Person {
 		super(firstName, lastName, age);
 
 		this.discount = discount;
-		this.productsBought = new ArrayList<Product>();
+		this.productsBought = new ArrayList();
 	}
 
 	public double getDiscount() {

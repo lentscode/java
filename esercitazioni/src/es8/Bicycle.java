@@ -9,6 +9,10 @@ public class Bicycle extends Vehicle {
     model = builder.model;
   }
 
+  public String getModel() {
+    return model;
+  }
+
   @Override
   public void move(double t) {
     final double x = super.initialX() + super.initialXSpeed() * t;

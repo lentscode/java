@@ -9,6 +9,10 @@ public class Car extends MotorVehicle {
 		nPlate = builder.nPlate;
 	}
 
+	public String getNumberPlate() {
+		return nPlate;
+	}
+
 	public static class Builder extends MotorVehicle.Builder<Builder> {
 		private String nPlate;
 

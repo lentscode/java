@@ -1,7 +1,7 @@
 package es7;
 
 public class BachelorStudent extends Student {
-  private String highSchool;
+  private final String highSchool;
 
   public BachelorStudent(
     String firstName,
@@ -16,5 +16,9 @@ public class BachelorStudent extends Student {
     super(firstName, lastName, age, registrationDate, number, course, contribute, 180);
 
     this.highSchool = highSchool;
+  }
+
+  public String getHighSchool() {
+    return highSchool;
   }
 }

@@ -9,6 +9,10 @@ public abstract class MotorVehicle extends Vehicle {
 		cc = builder.cc;
 	}
 
+	public int getCylindrate() {
+		return cc;
+	}
+
 	public static abstract class Builder<T extends Builder<T>> extends Vehicle.Builder<T> {
 		private int cc;
 

@@ -9,6 +9,10 @@ public class Moped extends MotorVehicle {
 		chassisN = builder.chassisN;
 	}
 
+	public long getChassisNumber() {
+		return chassisN;
+	}
+
 	public static class Builder extends MotorVehicle.Builder<Builder> {
 		private long chassisN;
 
